@@ -1,1 +1,0 @@
-# adnapPanda.github.io

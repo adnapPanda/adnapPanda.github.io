@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>KSP Rocket Simulator</title>
+		<title>Rocket Equation Simulator</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -20,8 +20,6 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -32,10 +30,28 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">KSP Rocket Simulator</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h1 class="major">Rocket Equation Simulator</h1>
+							<span class="image fit"><img src="images/KSPChart.png" alt="KSP Chart" /></span>
+							<p>The aim of this project was to simulate the rocket rocket equation as a function of time. It was coded in python.
+							The graphs above depict certain aspects of the simulation over time. For example, the velocity graph shows the velocity of the rocket during its flight.
+							You can see that it reaches its maximum positive velocity at around 70 seconds into the flight. This is when the rocket is out of fuel and the gravity of the planet is slowing it down.
+							This can also be seen at the acceleration graph when it drops into the negative and effectivly decelerates the rocket.
+							After the rocket is out of fuel, its velocity steadily decreases into the negative as it falls back to the planet.</p>
+							<p>Below you can see an example code snippit which is used to calculate the air density at the current height of the rocket.
+							This is required in order to calculate drag, which is used in the calculations for the other variables depicted in the chart. Drag is only calculated while the rocket is in the atmosphere. 
+							Hence once the rocket leaves, the drag drops to 0 as it is now in a vacuum. 
+							Some variables that were not taken into account are the <a href="https://en.wikipedia.org/wiki/Drag_coefficient#Definition">drag coefficent</a>, which in turn requires me to experimentally calculate the reynolds number. 
+							This was however not possible as it is very complex and I did not have the required variables.</p>
+							<p>If you are intrested in the code you can visit the repository <a href="https://github.com/adnapPanda/KSPRocketSimulator">here</a></p>
+							<pre><code>
+	def get_air_density_old(current_height):
+	    if current_height < kerbin_atm_cutoff:
+		  temp_at_alt = sea_level_temp - temp_lapse_rate*current_height  # calcs temp at altitude
+		  pressure_at_alt = sea_level_pressure*(1 - (temp_lapse_rate*current_height)/sea_level_temp)**((grav_accel*molar_mass_air)/(gas_constant*temp_lapse_rate)) #calcs pressure at altitude
+		  return (pressure_at_alt*molar_mass_air) / (gas_constant*temp_at_alt)
+	    else:
+		  return 0
+							</code></pre>
 						</div>
 					</section>
 

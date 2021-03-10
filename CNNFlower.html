@@ -31,12 +31,33 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">Using convolutional-neural-networks and data augmentation to predict flower species</h1>
-							<span class="image fit"><img src="images/flowerident.png" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-							<p><span class="image left"><img src="images/inceptionacc.png" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/inceptionloss1.png" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-								
+							<span class="image fit"><img src="images/flowerident.png" alt="Flower classification" /></span>
+							<h3>Project Description</h3>
+							<p>The goal for this project was to find out the difference between using various data augmentation techniques on flower 
+							classification using convolutional neural networks(CNN). There is a total of 104 different flower classes in the dataset. 
+							It consists of 7382 unique samples which all have an unique ID. These are further divided into a training, validation and test sets. 
+							Additionally, the training and validation set samples contain a label, which represents the class of flower. Since this is an image 
+							classification problem, we decided to use transfer learning from pre-trained models. The advantage of this is that 
+							it will allow us to build an accurate model in a timesaving manner. A pre-trained model is one that was trained on a large 
+							dataset in-order to solve a similar image classification problem.</p>
+							<hr><p><span class="image left"><img src="images/inceptiongraph.png" alt="InceptionV3 performance" /></span><h3>Pretrained Model</h3>
+							The choice of pre-trained model was a principal component of the project. We looked at different research papers that compared 
+							the performance of different pre-trained models. From these we observed that the InceptionV3 model is one of the best performing. 
+							On the left you can see a graph of the models accuracy on the flower dataset. This was made with no data augmentation on the dataset.
+							A ~70% accuracy on the raw dataset is very promising. In comparison, the VGG16 model was also tested on the dataset and performed much worse at ~20% accuracy.
+							The loss can also be seen in graph and at ~1.5 it is much lower when compared to VGG16's 3.5. The above image shows an example of flower classification using the 
+							InceptionV3 model and no data augmentation.</p>
+							<br clear="all">
+							<hr><p><span class="image right"><img src="images/croppedFlowers.png" alt="Flowers with random erasing" /></span><h3>Data Augmentation</h3>
+							For the project it was important to chose different data augmentation techniques in order to compare their accuracy with one another.
+							There are various research papers that have tested different augmentation techniques and many of them found that 
+							changing the geometry of the image results in a higher accuracy. Additionally, it was shown that cropping and random erasing perform better than other geometry 
+							changing augmentation. As such, we chose these 3 augmentation techniques based on existing literature; Cropping, random erasing, and scaling. 
+							On the right you can see an example of random erasing. The method choses a random width and height of pixels and removes them from the image.</p>
+							<br clear="all">
+							<hr><h3>Results</h3>
+							<p>As of the writting of this page, this project is still underway and will be completed end of march. Once completed, 
+							you will be able to find the results and research paper here.</p>
 						</div>
 					</section>
 
@@ -46,7 +67,7 @@
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>

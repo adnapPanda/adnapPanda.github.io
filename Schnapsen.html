@@ -20,8 +20,6 @@
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html" class="active">Generic</a></li>
-						<li><a href="elements.html">Elements</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -32,10 +30,33 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">Schnapsen</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+							<h1 class="major">Investigating an optimal set of features for a machine learning bot playing Schnapsen and how these features
+							influence performance and training time</h1>
+							<span class="image fit"><img src="images/codebackground.jpg" alt="Machine Learning Picture" /></span>
+							<p>What follows is the abstract of research paper which you can download at the bottom of the page.</p>
+							<hr><p>This paper investigates how different features implemented in a machine learning bot
+							using neural networks impacts the performance and training time of said bot. This is
+							achieved the in the card playing game schnapsen. For this experiment, a framework was
+							provided with which to test the bots in playing schnapsen.</p>
+							<p>20 different features were implemented in a bot and then ranked according to the
+							RFE method using a linear regression algorithm. In accordance with this, 4 bots were
+							created to test the hypothesis that the 11 best ranked features implemented in a bot will
+							outperform any other bot and achieve at least a 50% win rate against the control bot. The
+							bots are; allFeatures bot which has all the features that were ranked with RFE implement,
+							11MostRelevant bot which has the 11 highest ranked(rank closest to 1) features, Mixed bot
+							which contains the six highest ranked features as well as the five features ranked directly
+							below the eleven highest ranked features, and the 11LeastRelevant bot which has the 11
+							lowest ranked(ranks farthest away from 1) features. The hypothesis that “the training time of
+							a bot is affected both by the total amount of features in the feature set as well as the
+							existence of irrelevant features” was also tested.</p>
+							<p>To determine which bot performed best they played 1000 games against the control
+							bot each. In contrast to the aforementioned hypothesis, the 11MostRelevant bot did not
+							perform the best. The allFeatures bot had the highest number of wins and the
+							11LeastRelevant had the least amount of wins as was expected. The lowest training time
+							was achieved by the Mixed bot, which was 4 times faster than the second fastest
+							11MostRelevant bot. This may be because when certain features are hot-encoded, they are
+							represented in a binary vector, which can have many values in it. The Mixed bot does not
+							have a feature, which requires that much space and hence was faster.</p>
 							<li><a href="/downloadable/SchnapsenReport.pdf" download>Download the Paper Here</a></li>
 						</div>
 					</section>
@@ -46,7 +67,7 @@
 			<footer id="footer" class="wrapper alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>

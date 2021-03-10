@@ -32,9 +32,30 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">Emotion-Recognition in a noisy environment using Machine Learning Algorithms</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>Doneum conque.</p>
-							<p>Interduae.</p>
+							<span class="image fit"><img src="images/soundwave.jpg" alt="sound wave" /></span>
+							<h3>Project Description</h3>
+							<p>The project involves emotions. The data was personally retrieved from youtube clips. Things that were taken into account when selecting the clips were 
+							the amount and type of background noise, the emotion exhibited, the gender of the person, and the length of the sample. This way 60 sampels were retrieved 
+							in total, evenly split to the two emotions happiness and neutral and the gender of the speaker. These were then split 
+							to 40:20 which were used for training/validation and testing respectivly. </p>
+							<hr><h3>Filters</h3>
+							<p>Before any sort of training could take place, the samples had to be preprocessed. This includes converting them into the right format of .wav, and applying audio filters in-order to 
+							reduce the noise. The software that was used for both of these steps is ffmpeg. The filters that were used to preprocess the samples were a 
+							combination of the lowpass and highpass filters, and the arnndn filter. With the lowpass and highpass filter it is possible to cut out 
+							certain frequencies from the files. This means that all frequencies other than human voice frequencies can be removed. The frequency range that was used 
+							was between 200 to 3000 Hz. The arnndn filter is used to reduce noise from speech using recurrent neural networks. It takes as input a model m 
+							and then applies this to the sample in order try and isolate the voice. These filters were tested extensivly with different options, alone and together 
+							in-order to determine the best accuracy in the training and validation set.</p>
+							<hr><h3>Machine Learning Algorithms</h3>
+							<p>Once the preprocessing of the samples was completed, they were used to train models to be used in 3 different machine learning algorithms.
+							SVM, Random Forest, and Gaussian Naive Bayes. Grid search and 5-fold cross validation was used for SVM and Random Forest in order to determine the best 
+							hyperparameters to use. Since Gaussian NB only accepts a single argument as input, which is not usually not known ahead of time, it was excluded from the grid search.
+							Preliminary results of this shows that Random Forest performs better than SVM with an average accuracy of 85% compared to SVMs accuracy of 72%. For Random Forest an average 
+							was taken since the results fluctuate due to the nature of the classifier. SVM returned consistent results and did not require the calculation of an average. 
+							Take note that this testing is still on the training and validation set and not the final result.</p>
+							<hr><h3>Results</h3>
+							<p>As of the writting of this page, this project is still underway and will be completed mid-april. Once completed, 
+							you will be able to find the results, research paper and a link to the github page here.</p>
 						</div>
 					</section>
 

@@ -32,17 +32,17 @@
 						<div class="inner">
 							<h1 class="major">Rocket Equation Simulator</h1>
 							<span class="image fit"><img src="images/KSPChart.png" alt="KSP Chart" /></span>
-							<p>The aim of this project was to simulate the rocket rocket equation as a function of time. It was coded in python.
+							<p>The aim of this project was to simulate the rocket equation as a function of time. It was coded in python.
 							The graphs above depict certain aspects of the simulation over time. For example, the velocity graph shows the velocity of the rocket during its flight.
-							You can see that it reaches its maximum positive velocity at around 70 seconds into the flight. This is when the rocket is out of fuel and the gravity of the planet is slowing it down.
-							This can also be seen at the acceleration graph when it drops into the negative and effectivly decelerates the rocket.
+							You can see that it reaches its maximum positive velocity at around 70 seconds into the flight. This is when the rocket is out of fuel, and the gravity of the planet is slowing it down.
+							This can also be seen at the acceleration graph when it drops into the negative and effectively decelerates the rocket.
 							After the rocket is out of fuel, its velocity steadily decreases into the negative as it falls back to the planet.</p>
-							<p>Below you can see an example code snippit which is used to calculate the air density at the current height of the rocket.
+							<p>Below you can see an example code snippet which is used to calculate the air density at the current height of the rocket.
 							This is required in order to calculate drag, which is used in the calculations for the other variables depicted in the chart. Drag is only calculated while the rocket is in the atmosphere. 
 							Hence once the rocket leaves, the drag drops to 0 as it is now in a vacuum. 
-							Some variables that were not taken into account are the <a href="https://en.wikipedia.org/wiki/Drag_coefficient#Definition">drag coefficent</a>, which in turn requires me to experimentally calculate the reynolds number. 
+							Some variables that were not taken into account are the <a href="https://en.wikipedia.org/wiki/Drag_coefficient#Definition">drag coefficient</a>, which in turn requires me to experimentally calculate the reynolds number. 
 							This was however not possible as it is very complex and I did not have the required variables.</p>
-							<p>If you are intrested in the code you can visit the repository <a href="https://github.com/adnapPanda/KSPRocketSimulator">here</a></p>
+							<p>If you are interested in the code you can visit the repository <a href="https://github.com/adnapPanda/KSPRocketSimulator">here.</a></p>
 							<pre><code>
 	def get_air_density_old(current_height):
 	    if current_height < kerbin_atm_cutoff:

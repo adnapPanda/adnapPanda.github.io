@@ -51,14 +51,15 @@
 							in-order to determine the best accuracy in the training and validation set.</p>
 							<hr><h3>Machine Learning Algorithms</h3>
 							<p>Once the preprocessing of the samples was completed, they were used to train models to be used in 3 different machine learning algorithms.
-							SVM, Random Forest, and Gaussian Naive Bayes. Grid search and 5-fold cross-validation was used for SVM and Random Forest in order to determine the best 
-							hyperparameters to use. Since Gaussian NB only accepts a single argument as input, which is not usually not known ahead of time, it was excluded from the grid search.
-							Preliminary results of this shows that Random Forest performs better than SVM with an average accuracy of 85% compared to SVMs accuracy of 72%. For Random Forest an average 
-							was taken since the results fluctuate due to the nature of the classifier. SVM returned consistent results and did not require the calculation of an average. 
+							SVM, Random Forest, and K-Nearest Neighbours. Grid search and 5-fold cross-validation was used in order to determine the best hyperparameters to use. 
+							Preliminary results of this shows that Random Forest performs better than SVM with an average accuracy of 73% compared to SVMs and KNNs accuracy of 72%. For Random Forest an average 
+							was taken since the results fluctuate due to the nature of the classifier. SVM and KNN returned consistent results and did not require the calculation of an average. 
 							Take note that this testing is still on the training and validation set and not the final result.</p>
 							<hr><h3>Results</h3>
-							<p>As of the writing of this page, this project is still underway and will be completed mid-april. Once completed, 
-							you will be able to find the results, research paper and a link to the github page here.</p>
+							<p>When comparing the results, it can be seen that SVM performed best from the three algorithms with an F1-score of 0.762 and 0.737 for the happy and neutral classes 
+							respectively. Both KNN and RF performed similarly with KNN outperforming RF in the happy class and RF outperforming KNN in the neutral  class. For a more in-depth analysis of the results, 
+							please refer to the thesis, which you can find below.</p>
+							<p>Download the thesis <a href="/downloadable/Bachelor Thesis.pdf" download>here.</a></p>
 						</div>
 					</section>
 
